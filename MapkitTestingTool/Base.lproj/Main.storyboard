@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,19 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-h6-eby">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-h6-eby">
+                                <rect key="frame" x="0.0" y="26" width="414" height="886"/>
                                 <connections>
                                     <outlet property="delegate" destination="8bC-Xf-vdC" id="qnU-YB-Kj2"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-QB-5hr">
+                                <rect key="frame" x="20" y="57" width="97" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Type" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeMapType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oac-J3-Zzq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" id="Tih-fN-Ifd"/>
+                            <constraint firstItem="0iG-h6-eby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Tkc-0O-MHw"/>
                             <constraint firstItem="0iG-h6-eby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VD9-Ou-eFe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-h6-eby" secondAttribute="trailing" id="Vbo-oK-5UI"/>
+                            <constraint firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" constant="20" id="Vvq-rC-sN8"/>
                             <constraint firstItem="0iG-h6-eby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zea-2R-4GF"/>
+                            <constraint firstItem="0iG-h6-eby" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="50" id="dpn-do-S39"/>
                         </constraints>
                     </view>
                     <connections>
@@ -36,7 +52,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="89"/>
+            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rectangle.roundedbottom.fill" catalog="system" width="128" height="91"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
