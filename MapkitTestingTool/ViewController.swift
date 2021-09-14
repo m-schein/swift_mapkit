@@ -12,15 +12,27 @@ class ViewController: UIViewController {
     var coordinate2D = CLLocationCoordinate2DMake(40.8367321, 14.2468856)
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBOutlet weak var changePitch: UIButton!
     @IBAction func changeMapType(_ sender: UIButton) {
-        print("hello, the type button is working")
-        
+        switch mapView.mapType{
+            case .standard:
+                mapView.mapType = .satellite
+            case .satellite:
+                mapView.mapType = .hybrid
+            case .hybrid:
+                mapView.mapType = .satelliteFlyover
+            case .satelliteFlyover:
+                mapView.mapType = .hybridFlyover
+            case .hybridFlyover:
+                mapView.mapType = .standard
+            case .mutedStandard:
+                mapView.mapType = .mutedStandard
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateMapRegion(rangeSpan: 100)
+        updateMapRegion(rangeSpan: 5000)
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +41,9 @@ class ViewController: UIViewController {
         mapView.region = region
     }
 
-
+    @IBAction func toggleMapFeatures(_ sender: Any) {
+        
+    }
+    
 }
 

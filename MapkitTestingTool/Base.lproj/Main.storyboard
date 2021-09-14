@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,50 +13,115 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapkitTestingTool" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-h6-eby">
-                                <rect key="frame" x="0.0" y="26" width="414" height="886"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0iG-h6-eby">
+                                <rect key="frame" x="20" y="178" width="388" height="574"/>
+                                <rect key="contentStretch" x="0.29999999999999999" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="Y4L-Fg-1eH"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="8bC-Xf-vdC" id="qnU-YB-Kj2"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-QB-5hr">
-                                <rect key="frame" x="20" y="57" width="97" height="64"/>
+                            <stackView autoresizesSubviews="NO" opaque="NO" tag="2" contentMode="center" distribution="fillEqually" alignment="lastBaseline" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVT-80-NPb">
+                                <rect key="frame" x="20" y="96" width="388" height="62"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="znH-FY-St0">
+                                        <rect key="frame" x="0.0" y="0.0" width="194" height="62"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="G9N-Pc-YW6">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="194" height="28.000000000000004"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <state key="normal" title="Type" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changeMapType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OaY-zQ-PdW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="5gm-QB-5hr">
+                                                <rect key="frame" x="0.0" y="32.666666666666664" width="194" height="28.000000000000007"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <state key="normal" title="Features" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="toggleMapFeatures:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fd7-0T-xZM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-nI-saa">
+                                        <rect key="frame" x="194" y="0.0" width="194" height="62"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Fwg-Dh-Qbd">
+                                                <rect key="frame" x="0.0" y="1.6666666666666643" width="194" height="28.000000000000004"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <state key="normal" title="3D" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="M90-wY-7dY">
+                                                <rect key="frame" x="0.0" y="32.666666666666664" width="194" height="28.000000000000007"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                <state key="normal" title="30°" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <rect key="contentStretch" x="0.0" y="0.65000000000000002" width="1" height="1"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6HA-ig-1qz">
+                                <rect key="frame" x="20" y="767" width="388" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <state key="normal" title="Type" backgroundImage="rectangle.roundedbottom.fill" catalog="system">
-                                    <color key="titleColor" systemColor="systemOrangeColor"/>
-                                    <color key="titleShadowColor" systemColor="systemPurpleColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeMapType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oac-J3-Zzq"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" id="Tih-fN-Ifd"/>
-                            <constraint firstItem="0iG-h6-eby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Tkc-0O-MHw"/>
-                            <constraint firstItem="0iG-h6-eby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VD9-Ou-eFe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-h6-eby" secondAttribute="trailing" id="Vbo-oK-5UI"/>
-                            <constraint firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" constant="20" id="Vvq-rC-sN8"/>
-                            <constraint firstItem="0iG-h6-eby" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zea-2R-4GF"/>
-                            <constraint firstItem="0iG-h6-eby" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="50" id="dpn-do-S39"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0iG-h6-eby" secondAttribute="trailing" constant="20" id="4ff-kZ-9kV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" constant="160" id="LrI-Qv-hUc"/>
+                            <constraint firstItem="OVT-80-NPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eDj-QU-Pdl"/>
+                            <constraint firstItem="OVT-80-NPb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="jTi-pz-4FT"/>
+                            <constraint firstItem="0iG-h6-eby" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kFu-JQ-eJe"/>
+                            <constraint firstItem="0iG-h6-eby" firstAttribute="top" secondItem="OVT-80-NPb" secondAttribute="bottom" constant="20" id="wZw-CM-95G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0iG-h6-eby" secondAttribute="bottom" constant="140" id="x3J-jF-rlU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OVT-80-NPb" secondAttribute="trailing" constant="20" id="z5H-JK-wZM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LrI-Qv-hUc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="changePitch" destination="Fwg-Dh-Qbd" id="Bfj-BA-Ih3"/>
                         <outlet property="mapView" destination="0iG-h6-eby" id="cN1-oT-Ulw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
+            <point key="canvasLocation" x="28.037383177570092" y="88.120950323974085"/>
         </scene>
     </scenes>
     <resources>
         <image name="rectangle.roundedbottom.fill" catalog="system" width="128" height="91"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
